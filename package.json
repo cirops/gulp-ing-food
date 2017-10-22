@@ -1,0 +1,35 @@
+{
+  "name": "gulp-books",
+  "version": "1.0.0",
+  "description": "Simple project to handle a public RESTful api with gulp",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cirops/gulp-books.git"
+  },
+  "author": "cirops",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cirops/gulp-books/issues"
+  },
+  "homepage": "https://github.com/cirops/gulp-books#readme",
+  "devDependencies": {
+    "eslint-config-airbnb-base": "^12.1.0",
+    "eslint-plugin-import": "^2.8.0",
+    "gulp": "^3.9.1",
+    "gulp-util": "^3.0.8"
+  },
+  "dependencies": {
+    "babel-core": "^6.26.0",
+    "eslint": "^4.9.0",
+    "express": "^4.16.2",
+    "gulp-babel": "^7.0.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-sass": "^3.1.0",
+    "sass": "^1.0.0-beta.2",
+    "streamqueue": "^1.1.1"
+  }
+}
