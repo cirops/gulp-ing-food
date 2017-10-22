@@ -1,33 +1,37 @@
-const gulp = require('gulp');
-const babel = require('gulp-babel');
-const sass = require('gulp-sass');
-const concat = require('gulp-concat');
-const gutil = require('gulp-util');
-const streamqueue = require('streamqueue');
-
-gulp.task('default', () => gutil.log('Gulp is running!'));
+var gulp = require("gulp");
+var sass = require("gulp-sass");
+var concat = require("gulp-concat");
+var babel = require("gulp-babel");
+var streamqueue = require("streamqueue");
 
 // Default task
-gulp.task('default', () => gulp.start('scss').start('js'));
-
-// Watch file changes
-gulp.task('watch', function() {
-  gulp.watch('src/scss/**/*.scss', ['scss']);
-  gulp.watch('src/js/**/*.js', ['js']);
+gulp.task("default", function() {
+  gulp.start("scss");
+  gulp.start("js");
 });
 
-// Compile Sass
-gulp.task('scss', () =>
-  gulp
-    .src('src/scss/main.scss')
-    .pipe(sass({ outputStyle: 'compressed' }).on('error', sass.logError))
-    .pipe(gulp.dest('./build')));
+// Watch file changes
+gulp.task("watch", function() {
+  gulp.watch("src/scss/**/*.scss", ["scss"]);
+  gulp.watch("src/js/**/*.js", ["js"]);
+});
 
-// Compile Js
-gulp.task('js', () =>
-  streamqueue({ objectMode: true }, gulp.src('./src/js/**/*.js'))
-    .pipe(concat('app.js'))
-    .pipe(babel({
-      presets: ['es2015'],
-    }))
-    .pipe(gulp.dest('./build')));
+// Compile sass
+gulp.task("scss", function() {
+  gulp
+    .src("src/scss/main.scss")
+    .pipe(sass({ outputStyle: "compressed" }).on("error", sass.logError))
+    .pipe(gulp.dest("./build"));
+});
+
+gulp.task("js", function() {
+  streamqueue({ objectMode: true }, gulp.src("./src/js/**/*.js"))
+    .pipe(concat("app.js"))
+    .pipe(
+      babel({
+        presets: ["es2015"]
+      })
+    )
+    .pipe(gulp.dest("./build"));
+});
+
