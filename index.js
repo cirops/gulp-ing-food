@@ -1,6 +1,5 @@
 const express = require('express');
 const path = require('path');
-const axios = require('axios');
 
 const port = +process.env.VIRTUAL_PORT || 3000;
 
