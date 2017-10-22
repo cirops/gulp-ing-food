@@ -14,7 +14,7 @@ gulp.task("default", function() {
 gulp.task("watch", function() {
   gulp.watch("src/scss/**/*.scss", ["scss"]);
   gulp.watch("src/js/**/*.js", ["js"]);
-  gulp.watch("src/index.html", ["copy-index-html"]);
+  gulp.watch("src/index.html", ["copy-assets"]);
 });
 
 // Compile sass
@@ -38,7 +38,7 @@ gulp.task("js", function() {
 });
 
 // Copy Index to build
-gulp.task('copy-index-html', function() {
+gulp.task('copy-assets', function() {
   gulp.src('src/index.html')
   // Perform minification tasks, etc here
   .pipe(gulp.dest('./build'));
