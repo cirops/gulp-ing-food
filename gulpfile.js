@@ -8,6 +8,7 @@ var streamqueue = require("streamqueue");
 gulp.task("default", function() {
   gulp.start("scss");
   gulp.start("js");
+  gulp.start("copy-assets");
 });
 
 // Watch file changes
