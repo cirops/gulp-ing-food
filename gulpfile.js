@@ -1,8 +1,8 @@
-var gulp = require("gulp");
-var sass = require("gulp-sass");
-var concat = require("gulp-concat");
-var babel = require("gulp-babel");
-var streamqueue = require("streamqueue");
+var gulp = require('gulp');
+var sass = require('gulp-sass');
+var concat = require('gulp-concat');
+var babel = require('gulp-babel');
+var streamqueue = require('streamqueue');
 
 gulp.task('default', function() {
   gulp.start('build');
