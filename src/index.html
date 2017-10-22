@@ -5,12 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Gulp Books!</title>
+  <link rel="stylesheet" href="vendor/css/bootstrap.min.css">
   <link rel="stylesheet" href="main.css">
 </head>
 <body>
-  <form action="" id="search_form">
-    <input type="text" name="search" placeholder="Search for a book...">
-    <input type="submit" value="Submit">
+  <form class="form-inline" action="" id="search_form">
+    <input class="form-control" type="text" name="search" placeholder="Search for a book...">
+    <input class="btn btn-secondary" type="submit" value="Submit">
   </form>
   <p class="search_query_p">You searched for: "<span class="search_query"></span>" ...</p>
   <div id="results_box">
