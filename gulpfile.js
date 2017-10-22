@@ -24,6 +24,7 @@ gulp.task("scss", function() {
     .pipe(gulp.dest("./build"));
 });
 
+// Compile js
 gulp.task("js", function() {
   streamqueue({ objectMode: true }, gulp.src("./src/js/**/*.js"))
     .pipe(concat("app.js"))
@@ -33,5 +34,12 @@ gulp.task("js", function() {
       })
     )
     .pipe(gulp.dest("./build"));
+});
+
+// Copy Index to build
+gulp.task('copy-index-html', function() {
+  gulp.src('src/index.html')
+  // Perform minification tasks, etc here
+  .pipe(gulp.dest('./build'));
 });
 

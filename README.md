@@ -2,7 +2,7 @@
 
 ### Roadmap:
 #### v1:
-- [x] Create a github repository to manage with smartGit (done)
+- [x] Create a github repository to manage with smartGit
 - [x] Use gulp as a task manager to the project files
 - [x] Use eslint
 - [x] Use jQuery

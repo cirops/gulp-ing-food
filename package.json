@@ -4,7 +4,10 @@
   "description": "Simple project to handle a public RESTful api with gulp",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint ./src",
+    "watch": "gulp watch"
   },
   "repository": {
     "type": "git",
@@ -16,18 +19,16 @@
     "url": "https://github.com/cirops/gulp-books/issues"
   },
   "homepage": "https://github.com/cirops/gulp-books#readme",
-  "devDependencies": {
-    "eslint-config-airbnb-base": "^12.1.0",
-    "eslint-plugin-import": "^2.8.0",
-    "gulp": "^3.9.1",
-    "gulp-util": "^3.0.8"
-  },
   "dependencies": {
     "axios": "^0.17.0",
     "babel-core": "^6.26.0",
     "babel-preset-es2015": "^6.24.1",
     "eslint": "^4.9.0",
+    "eslint-config-airbnb-base": "^12.1.0",
+    "eslint-plugin-import": "^2.8.0",
     "express": "^4.16.2",
+    "gulp": "^3.9.1",
+    "gulp-util": "^3.0.8",
     "gulp-babel": "^7.0.0",
     "gulp-concat": "^2.6.1",
     "gulp-sass": "^3.1.0",
