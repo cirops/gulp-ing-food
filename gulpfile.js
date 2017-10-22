@@ -14,6 +14,7 @@ gulp.task("default", function() {
 gulp.task("watch", function() {
   gulp.watch("src/scss/**/*.scss", ["scss"]);
   gulp.watch("src/js/**/*.js", ["js"]);
+  gulp.watch("src/index.html", ["copy-index-html"]);
 });
 
 // Compile sass
