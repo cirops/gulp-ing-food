@@ -1,5 +1,6 @@
 
 $('#search_form').submit((event) => {
+  $('.icon-container').show();
   const query = $('input[name="search"]').val();
   $.get('https://www.googleapis.com/books/v1/volumes?q='.concat(query), (data) => {
     if (data.totalItems === 0) {
@@ -14,6 +15,7 @@ $('#search_form').submit((event) => {
       }
       $('#results_box').append(ul);
     }
+    $('.icon-container').hide();
     $('.search_query_p').show();
   });
   event.preventDefault();
