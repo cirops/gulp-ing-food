@@ -10,10 +10,16 @@
 </head>
 <body>
   <form class="form-inline" action="" id="search_form">
-    <input class="form-control" type="text" name="search" placeholder="Search for a book...">
+    <input class="form-control" type="text" name="search" placeholder="Search for a book..." required>
     <input class="btn btn-secondary" type="submit" value="Submit">
   </form>
-  <p class="search_query_p"><span class="search_n_results"></span> results found for "<span class="search_keyword"></span>".</p>
+  <p class="search_query_p">
+    <strong><span class="search_total_results"></span></strong>
+    results found for "
+    <span class="search_keyword"></span>
+    ". Showing <strong><span class="search_n_results"></span></strong>
+    results.
+  </p>
   <div id="results_box">
     
   </div>
