@@ -1,34 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Gulp Books!</title>
   <link rel="stylesheet" href="vendor/css/bootstrap.min.css">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"> 
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="main.css">
 </head>
+
 <body>
   <form class="form-inline" action="" id="search_form">
     <input class="form-control" type="text" name="search" placeholder="Search for a book..." required>
     <input class="btn btn-secondary" type="submit" value="Submit">
   </form>
-  <p class="search_query_p">
-    <strong><span class="search_total_results"></span></strong>
-    results found for "
-    <span class="search_keyword"></span>
-    ". Showing <strong><span class="search_n_results"></span></strong>
-    results.
+  <p>
+    <span class="results_data">
+      <span class="results_total"></span> results found for "<span class="results_query"></span>".
+    </span>
+    <span class="results_positive">Showing
+      <span class="results_page"></span>
+      results.
+    </span>
   </p>
-  <span class="icon-container"><i class="fa fa-spin fa-spinner"></i></span>
+  
+  <span class="icon-container">
+    <i class="fa fa-spin fa-spinner"></i>
+  </span>
   <div id="results_box">
-    
+
   </div>
-  <script
-  src="https://code.jquery.com/jquery-3.2.1.min.js"
-  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
-  crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+    crossorigin="anonymous"></script>
   <script src="app.js"></script>
 </body>
+
 </html>
