@@ -15,7 +15,7 @@
   <div class="wrapper">
     <form class="form-inline mb-2" action="" id="search_form">
       <input class="form-control" type="text" name="search" placeholder="Search for a book..." required>
-      <input class="btn btn-secondary" type="submit" value="Submit">
+      <input id="btn_submit" class="btn btn-secondary" type="submit" value="Submit">
     </form>
     <p>
       <span class="results_data">
@@ -24,15 +24,17 @@
       <span class="results_positive">Showing
         <span class="results_page"></span>
         results.
-      </span>
+      </span> 
     </p>
     
     <span class="icon-container">
       <i class="fa fa-spin fa-spinner"></i>
     </span>
     <div id="results_box">
-
+      
     </div>
+    <button class="btn search_prev">previous</button>
+    <button class="btn search_next">next</button>
 </div>
   <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
     crossorigin="anonymous"></script>
