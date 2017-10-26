@@ -65,7 +65,7 @@ $('.search_next').click((event) => {
 
 $('.search_prev').click((event) => {
   $('#results_box').html('');
-  $('icon-container').show();
+  $('.icon-container').show();
   searchPage -= 1;
   if (searchPage === 0) {
     $('.search_prev').attr('disabled', true);
