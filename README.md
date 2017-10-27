@@ -1,4 +1,4 @@
-## Gulp Books Project
+## Gulp(ing) Food! Project (formerly Gulp Books!)
 
 ### Roadmap:
 #### v1:
