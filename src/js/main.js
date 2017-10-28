@@ -13,7 +13,20 @@ window.myCallback = (data) => {
     $('.results_query').text(query);
     const ul = $('<ul>');
     for (let i = 0, l = recipes.length; i < l; i += 1) {
-      ul.append(`<li>${recipes[i].title}</li>`);
+      ul.append(`
+      <div class="card">
+        <div class="row">
+          <div class="col-md-auto">
+              <a href="${recipes[i].href}" target="_blank"><img class="card-img-top" src="${recipes[i].thumbnail}" alt="Card image cap"></a>
+          </div>
+          <div class="col-md-auto">
+            <div class="card-block">
+              <a href="${recipes[i].href}" target="_blank"><h4 class="card-title">${recipes[i].title}</h4></a>
+              <p class="card-text">Ingredients: ${recipes[i].ingredients}</p>
+            </div>
+          </div>
+        </div>
+      </div>`);
     }
     $('.results_positive').show();
     $('.search_prev').show();
