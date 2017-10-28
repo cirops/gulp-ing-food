@@ -1,5 +1,5 @@
 ## Gulp(ing) Food! Project (formerly Gulp Books!)
-** Project to practice Gulp and simple API querying **
+### Project to practice Gulp and simple API querying
 
 ### Roadmap:
 #### v1:
