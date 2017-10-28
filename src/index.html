@@ -13,30 +13,46 @@
 </head>
 
 <body>
-  <div class="wrapper">
-    <form class="form-inline mb-2" action="" id="search_form">
-      <input class="form-control" type="text" name="search" placeholder="Search for recipes..." required>
-      <input id="btn_submit" class="btn btn-secondary" type="submit" value="Submit">
-    </form>
-    <p>
-      <span class="results_data">
-        <span class="results_total"></span> results found for "<span class="results_query"></span>".
-      </span>
-      <span class="results_positive">Showing
-        <span class="results_page"></span>
-        results.
-      </span> 
-    </p>
-    
-    <span class="icon-container">
-      <i class="fa fa-spin fa-spinner"></i>
-    </span>
-    <div id="results_box">
-      
+  <div class="container mt-2">
+    <div class="row justify-content-center">
+      <div class="col-md-auto">
+        <form class="form-inline mb-2" action="" id="search_form">
+          <div class="input-group">
+            <span class="input-group-addon" id="basic-addon1">
+              <i class="fa fa-cutlery"></i>
+            </span>
+            <input class="form-control" type="text" name="search" placeholder="Search for recipes..." required>
+            <span class="input-group-btn">
+              <button id="btn_submit" class="btn btn-primary"><i class="fa fa-search"></i></button>
+            </span>
+          </div>
+        </form>
+      </div>
     </div>
-    <button class="btn search_prev">previous</button>
-    <button class="btn search_next">next</button>
-</div>
+    <div class="row justify-content-center">
+      <div class="col-md-auto">
+        <p>
+          <span class="results_data">
+            <span class="results_total"></span> results found for "
+            <span class="results_query"></span>".
+          </span>
+          <span class="results_positive">Showing
+            <span class="results_page"></span>
+            results.
+          </span>
+        </p>
+
+        <span class="icon-container">
+          <i class="fa fa-spin fa-spinner"></i>
+        </span>
+        <div id="results_box">
+
+        </div>
+        <button class="btn search_prev">previous</button>
+        <button class="btn search_next">next</button>
+      </div>
+    </div>
+  </div>
   <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
     crossorigin="anonymous"></script>
   <script src="app.js"></script>
