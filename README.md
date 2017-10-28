@@ -1,4 +1,5 @@
 ## Gulp(ing) Food! Project (formerly Gulp Books!)
+** Project to practice Gulp and simple API querying **
 
 ### Roadmap:
 #### v1:
@@ -8,11 +9,11 @@
 - [x] Use jQuery
 - [x] Use sass
 - [x] Use a public RESTful book api
-- [x] Fetch the books (with a search form) from the api and show them on a simple page
+- [x] Fetch the recipes (with a search form) from the api and show them on a simple page
 
 #### v2:
-- [ ] Branch git repository to v2
-- [ ] Separate .js files to be merged with gulp
-- [ ] Separate .scss files to be merged with gulp
+- [x] Branch git repository to v2
+- [x] Separate .js files to be merged with gulp
+- [x] Separate .scss files to be merged with gulp
+- [x] Organize static files in a better way
 - [ ] Add bootstrap layout to books page
-- [ ] Organize static files in a better way
