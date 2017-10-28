@@ -1,42 +1,16 @@
 let searchPage = 1;
 let query = '';
 
-window.myCallback = (data) => {
-  const recipes = data.results;
+const $input = $('input[type="text"]');
+const $button = $('#btn_submit');
 
-  if (recipes.length === 0) {
-    $('.results_total').text('No');
-    $('.results_query').text(query);
+setInterval(() => {
+  if ($input.val().length > 0) {
+    $button.attr('disabled', false);
   } else {
-    $('.results_total').text(recipes.length);
-    $('.results_page').text(recipes.length);
-    $('.results_query').text(query);
-    const ul = $('<ul>');
-    for (let i = 0, l = recipes.length; i < l; i += 1) {
-      ul.append(`
-      <div class="card">
-        <div class="row">
-          <div class="col-md-auto">
-              <a href="${recipes[i].href}" target="_blank"><img class="card-img-top" src="${recipes[i].thumbnail}" alt="Card image cap"></a>
-          </div>
-          <div class="col-md-auto">
-            <div class="card-block">
-              <a href="${recipes[i].href}" target="_blank"><h4 class="card-title">${recipes[i].title}</h4></a>
-              <p class="card-text">Ingredients: ${recipes[i].ingredients}</p>
-            </div>
-          </div>
-        </div>
-      </div>`);
-    }
-    $('.results_positive').show();
-    $('.search_prev').show();
-    $('.search_next').show();
-    $('#results_box').append(ul);
+    $button.attr('disabled', true);
   }
-  $('.results_data').show();
-  $('.icon-container').hide();
-  $('#btn_submit').attr('disabled', false);
-};
+}, 100);
 
 $('#search_form').submit((event) => {
   searchPage = 1;
@@ -93,3 +67,41 @@ $('.search_prev').click((event) => {
   });
   event.preventDefault();
 });
+
+window.myCallback = (data) => {
+  const recipes = data.results;
+
+  if (recipes.length === 0) {
+    $('.results_total').text('No');
+    $('.results_query').text(query);
+  } else {
+    $('.results_total').text(recipes.length);
+    $('.results_page').text(recipes.length);
+    $('.results_query').text(query);
+    const ul = $('<ul>');
+    for (let i = 0, l = recipes.length; i < l; i += 1) {
+      ul.append(`
+      <div class="card">
+        <div class="row">
+          <div class="col-md-auto">
+              <a href="${recipes[i].href}" target="_blank"><img class="card-img-top" src="${recipes[i].thumbnail}" alt="Card image cap"></a>
+          </div>
+          <div class="col-md-auto">
+            <div class="card-block">
+              <a href="${recipes[i].href}" target="_blank"><h4 class="card-title">${recipes[i].title}</h4></a>
+              <p class="card-text">Ingredients: ${recipes[i].ingredients}</p>
+            </div>
+          </div>
+        </div>
+      </div>`);
+    }
+    $('.results_positive').show();
+    $('.search_prev').show();
+    $('.search_next').show();
+    $('#results_box').append(ul);
+  }
+  $('.results_data').show();
+  $('.icon-container').hide();
+  $('#btn_submit').attr('disabled', false);
+};
+
