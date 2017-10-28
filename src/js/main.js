@@ -2,7 +2,7 @@ let searchPage = 1;
 let query = '';
 
 window.myCallback = (data) => {
-  let recipes = data.results;
+  const recipes = data.results;
 
   if (recipes.length === 0) {
     $('.results_total').text('No');
@@ -13,7 +13,7 @@ window.myCallback = (data) => {
     $('.results_query').text(query);
     const ul = $('<ul>');
     for (let i = 0, l = recipes.length; i < l; i += 1) {
-      ul.append(`<li><strong>${recipes[i].title}</strong>`);
+      ul.append(`<li>${recipes[i].title}</li>`);
     }
     $('.results_positive').show();
     $('.search_prev').show();
