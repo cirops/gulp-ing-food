@@ -17,7 +17,6 @@ $('#search_form').submit((event) => {
   $('.search_prev').attr('disabled', true);
   $('#btn_submit').prop('disabled', true);
   $('.results_data').hide();
-  $('.results_positive').hide();
   $('#results_box').html('');
   $('.icon-container').show();
   query = $('input[name="search"]').val();
@@ -70,14 +69,10 @@ $('.search_prev').click((event) => {
 
 window.myCallback = (data) => {
   const recipes = data.results;
-
   if (recipes.length === 0) {
-    $('.results_total').text('No');
-    $('.results_query').text(query);
+    $('.results_data').text(`No results found for "${query}".`);
   } else {
-    $('.results_total').text(recipes.length);
-    $('.results_page').text(recipes.length);
-    $('.results_query').text(query);
+    $('.results_data').text(`Showing ${recipes.length} results for "${query}" on this page.`);
     const ul = $('<ul>');
     for (let i = 0, l = recipes.length; i < l; i += 1) {
       ul.append(`
@@ -95,7 +90,6 @@ window.myCallback = (data) => {
         </div>
       </div>`);
     }
-    $('.results_positive').show();
     $('.search_prev').show();
     $('.search_next').show();
     $('#results_box').append(ul);
