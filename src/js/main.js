@@ -96,7 +96,7 @@ const checkInputValue = () => {
 
   if (value) {
     $button.attr('disabled', false);
-    $button.style('cursor', 'pointer');
+    $button.css('cursor', 'pointer');
   } else {
     $button.attr('disabled', true);
     $button.css('cursor', 'not-allowed');
