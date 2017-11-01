@@ -71,7 +71,7 @@ window.myCallback = (data) => {
       <div class="card">
         <div class="row">
           <div class="col-md-auto thumb-container">
-              <a href="${recipes[i].href}" target="_blank"><img class="card-img-top" src="${recipes[i].thumbnail}" alt="Card image cap"></a>
+              <a href="${recipes[i].href}" target="_blank"><img class="card-img-top" src="${recipes[i].thumbnail ? recipes[i].thumbnail: 'food-placeholder.png'}" alt="Card image cap"></a>
           </div>
           <div class="col-md-auto">
             <div class="card-block">
