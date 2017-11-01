@@ -31,6 +31,25 @@ footer {
   background-color: #e9ecef;
 }
 
+.footer .left-footer {
+  float: left;
+  margin-left: 20px;
+  line-height: 50px;
+  font-weight: 600;
+}
+
+.footer .left-footer .ing {
+  color: #007bff;
+  font-weight: 300;
+}
+
+.footer .right-footer {
+  float: right;
+  margin-right: 20px;
+  line-height: 50px;
+  font-weight: 300;
+}
+
 .icon-container i {
   color: #007bff;
   margin: 20px;
