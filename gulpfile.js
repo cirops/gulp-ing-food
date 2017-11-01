@@ -41,7 +41,10 @@ gulp.task('compile-js', function() {
 });
 
 gulp.task('copy-assets', function() {
-  gulp.src('src/index.html')
+  gulp.src([
+    'src/index.html',
+    'src/favicon.ico'
+  ])
   .pipe(gulp.dest('./build'));
 });
 
