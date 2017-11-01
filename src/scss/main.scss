@@ -2,6 +2,18 @@ body {
   font-family: 'Muli', sans-serif;
 }
 
+.title {
+  text-align: center;
+  margin: 40px 0 20px;
+  font-size: 40px;
+  font-weight: 600;
+}
+
+.title .ing-title {
+  color: #007bff;
+  font-weight: 300;
+}
+
 .results_data,
 .results_positive,
 .icon-container,
