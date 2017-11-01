@@ -32,7 +32,8 @@ body {
 }
 
 .search_prev:disabled,
-.search_next:disabled {
+.search_next:disabled,
+#btn_submit {
   cursor: not-allowed;
 }
 

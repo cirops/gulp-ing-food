@@ -4,14 +4,6 @@ let query = '';
 const $input = $('input[type="text"]');
 const $button = $('#btn_submit');
 
-setInterval(() => {
-  if ($input.val().length > 0) {
-    $button.attr('disabled', false);
-  } else {
-    $button.attr('disabled', true);
-  }
-}, 100);
-
 $('#search_form').submit((event) => {
   searchPage = 1;
   $('.search_prev').attr('disabled', true);
@@ -99,3 +91,17 @@ window.myCallback = (data) => {
   $('#btn_submit').attr('disabled', false);
 };
 
+const checkInputValue = () => {
+  const value = $('#search_form input').val();
+
+  if (value) {
+    $button.attr('disabled', false);
+    $button.style('cursor', 'pointer');
+  } else {
+    $button.attr('disabled', true);
+    $button.css('cursor', 'not-allowed');
+  }
+};
+
+$('#search_form input').on('keyup', checkInputValue);
+checkInputValue();
