@@ -78,13 +78,13 @@ window.myCallback = (data) => {
       ul.append(`
       <div class="card">
         <div class="row">
-          <div class="col-md-auto">
+          <div class="col-md-auto thumb-container">
               <a href="${recipes[i].href}" target="_blank"><img class="card-img-top" src="${recipes[i].thumbnail}" alt="Card image cap"></a>
           </div>
           <div class="col-md-auto">
             <div class="card-block">
               <a href="${recipes[i].href}" target="_blank"><h4 class="card-title">${recipes[i].title}</h4></a>
-              <p class="card-text">Ingredients: ${recipes[i].ingredients}</p>
+              <p class="card-text"><strong>Ingredients:</strong> ${recipes[i].ingredients}</p>
             </div>
           </div>
         </div>
