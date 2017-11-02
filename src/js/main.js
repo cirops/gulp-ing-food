@@ -1,52 +1,19 @@
 let searchPage = 1;
 let query = '';
 
-const $input = $('input[type="text"]');
 const $button = $('#btn_submit');
+const $buttonPrev = $('.search_prev');
+const $buttonNext = $('.search_next');
 
-$('#search_form').submit((event) => {
-  searchPage = 1;
-  $('.search_prev').attr('disabled', true);
-  $('#btn_submit').prop('disabled', true);
-  $('.results_data').hide();
+function fetchPage(pageIndex) {
   $('#results_box').html('');
   $('.icon-container').show();
-  query = $('input[name="search"]').val();
-  $.ajax({
-    url: `http://www.recipepuppy.com/api/?i=${query}&p=${searchPage}`,
-    async: true,
-    dataType: 'jsonp',
-    crossDomain: true,
-    jsonp: 'callback',
-    jsonpCallback: 'myCallback',
-  });
-  event.preventDefault();
-});
+  searchPage = pageIndex;
 
-$('.search_next').click((event) => {
-  $('.icon-container').show();
-  $('#results_box').html('');
-  searchPage += 1;
-  $('.search_prev').prop('disabled', false);
-  $.ajax({
-    url: `http://www.recipepuppy.com/api/?i=${query}&p=${searchPage}`,
-    async: true,
-    dataType: 'jsonp',
-    crossDomain: true,
-    jsonp: 'callback',
-    jsonpCallback: 'myCallback',
-  });
-  event.preventDefault();
-});
-
-$('.search_prev').click((event) => {
-  $('#results_box').html('');
-  $('.icon-container').show();
-  $('.icon-container').show();
-  $('#results_box').html('');
-  searchPage -= 1;
   if (searchPage === 1) {
-    $('.search_prev').prop('disabled', true);
+    $buttonPrev.prop('disabled', true);
+  } else {
+    $buttonPrev.prop('disabled', false);
   }
   $.ajax({
     url: `http://www.recipepuppy.com/api/?i=${query}&p=${searchPage}`,
@@ -54,12 +21,36 @@ $('.search_prev').click((event) => {
     dataType: 'jsonp',
     crossDomain: true,
     jsonp: 'callback',
-    jsonpCallback: 'myCallback',
+    jsonpCallback: 'fetchSuccess',
+  }).catch(() => {
+    $('.results_data').text(`No more results for "${query}".`);
+    $('.icon-container').hide();
+    $('#btn_submit').attr('disabled', false);
+    $buttonNext.attr('disabled', true);
   });
+}
+
+$('#search_form').submit((event) => {
+  $('#btn_submit').prop('disabled', true);
+  $('.results_data').hide();
+  query = $('input[name="search"]').val();
+
+  fetchPage(1);
   event.preventDefault();
 });
 
-window.myCallback = (data) => {
+$buttonPrev.click((event) => {
+  fetchPage(searchPage - 1);
+  $buttonNext.attr('disabled', false);
+  event.preventDefault();
+});
+
+$buttonNext.click((event) => {
+  fetchPage(searchPage + 1);
+  event.preventDefault();
+});
+
+window.fetchSuccess = (data) => {
   const recipes = data.results;
   if (recipes.length === 0) {
     $('.results_data').text(`No results found for "${query}".`);
