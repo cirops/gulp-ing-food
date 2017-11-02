@@ -1,5 +1,14 @@
+html, body {
+  height: 100%;
+}
 body {
   font-family: 'Muli', sans-serif;
+  display: flex;
+  flex-direction: column;
+}
+
+.container {
+  flex: 1 0 auto;
 }
 
 .title {
@@ -22,6 +31,11 @@ body {
   display:none;
 }
 
+.btn-container {
+  display: flex;
+  justify-content: center;
+}
+
 .search_prev,
 .search_next {
   margin-top: 15px;
@@ -29,6 +43,10 @@ body {
   text-transform: uppercase;
   font-weight: 300;
   cursor: pointer;
+}
+
+.search_prev {
+  margin-right: 10px;
 }
 
 .search_prev:disabled,
