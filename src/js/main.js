@@ -33,6 +33,8 @@ function fetchPage(pageIndex) {
 $('#search_form').submit((event) => {
   $('#btn_submit').prop('disabled', true);
   $('.results_data').hide();
+  $buttonPrev.hide();
+  $buttonNext.hide();
   query = $('input[name="search"]').val();
 
   fetchPage(1);
