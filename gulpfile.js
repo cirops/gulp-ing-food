@@ -24,7 +24,7 @@ gulp.task('watch', function() {
 
 gulp.task('compile-style', function() {
   gulp
-    .src('src/scss/main.scss')
+    .src('src/scss/app.scss')
     .pipe(sass({ outputStyle: 'compressed' }).on('error', sass.logError))
     .pipe(gulp.dest('./build'));
 });

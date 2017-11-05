@@ -1,0 +1,18 @@
+.card {
+  margin-bottom: 5px;
+
+  .card-img-top {
+    width: 100%;
+
+    &:hover {
+      opacity: 0.7;
+    }
+  }
+
+  .card-block {
+    .card-text {
+      padding: 10px;
+    }
+  }
+}
+
