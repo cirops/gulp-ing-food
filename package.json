@@ -20,7 +20,7 @@
   },
   "homepage": "https://github.com/cirops/gulp-ing-food#readme",
   "dependencies": {
-    "axios": "^0.21.1"
+    "axios": "^0.21.2"
   },
   "devDependencies": {
     "@babel/core": "^7.15.0",
